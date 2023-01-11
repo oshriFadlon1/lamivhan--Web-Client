@@ -7,15 +7,18 @@ import { googleLogout } from "@react-oauth/google";
 
 function UserLogin() {
   const login = useGoogleLogin({
+    scope: "https://www.googleapis.com/auth/calendar",
     onSuccess: (response) => {
       setUserHasLoggedIn(true);
       console.log(response);
       const { access_token } = response;
       axios
-        .post("/login", { access_token })
+        .post("/generate", { access_token })
+        .then((resp) => {
+          console.log(resp);
+        })
         .catch((error) => console.log(error));
     },
-    scope: "https://www.googleapis.com/auth/calendar",
   });
 
   const logout = () => {
