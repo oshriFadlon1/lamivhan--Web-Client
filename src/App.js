@@ -1,16 +1,16 @@
-import UserSignUp from "./components/UserSignUp";
- 
+import UserLogin from "./components/UserLogin";
+
 function App() {
   return (
     <div>
-      <div>
+      <div className="header">
         <h1>Lamivhan</h1>
       </div>
       <div>
-        <UserSignUp />
+        <UserLogin />
       </div>
     </div>
   );
 }
- 
+
 export default App;
