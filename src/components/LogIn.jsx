@@ -3,7 +3,6 @@ import api from "../api/axiosBackendConfig";
 
 const Login = () => {
   const sendAuthCode = async (code) => {
-    const param = { code: code };
     const res = await api.post("/sign-up", {}, { params: { code: code } });
     return res;
   };
